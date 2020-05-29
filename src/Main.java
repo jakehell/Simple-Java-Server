@@ -31,33 +31,12 @@ public class Main {
 
 				byte singleByte = 0;
 
-				ArrayList<String> message = new ArrayList<>();
-				
-				String previousCharacter = "";
-				
-				int messageNumber = 1;
 				while(true)
 				{
 					singleByte = in.readByte();
 					String character = new String(new byte[] { singleByte });
 					
-					if(previousCharacter.equals("\n") && character.equals("\n"))
-					{
-						StringBuilder builder = new StringBuilder();
-						message.forEach(p -> builder.append(p));
-						
-						System.out.println("Message " + messageNumber);
-						System.out.println(builder.toString());
-						
-						messageNumber++;
-						previousCharacter = "";
-						message.clear();
-					}
-					else 
-					{
-						previousCharacter = character;
-						message.add(character);
-					}
+					System.out.print(character);
 				}
 
 			} catch (IOException i) {
